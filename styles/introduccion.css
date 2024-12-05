@@ -1,0 +1,62 @@
+.seccion-introduccion {
+    padding: 6rem 2rem;
+    background-color: white;
+}
+
+.contenido-introduccion {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.texto-introduccion {
+    flex: 1;
+}
+
+.titulo-introduccion {
+    color: var(--color-secundario);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.descripcion-introduccion {
+    color: var(--color-texto);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.imagen-introduccion {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.imagen-introduccion img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.1));
+}
+
+@media (max-width: 1300px) {
+    .contenido-introduccion {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .titulo-introduccion {
+        font-size: 2rem;
+    }
+
+    .imagen-introduccion {
+        order: -1;
+    }
+
+    .imagen-introduccion img {
+        max-width: 80%;
+    }
+}

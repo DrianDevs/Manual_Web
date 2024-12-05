@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Instalación de WildFly - Manual de Servidores Java EE</title>
+    <link rel="stylesheet" href="styles/principal.css">
+    <link rel="stylesheet" href="styles/encabezado.css">
+    <link rel="stylesheet" href="styles/pie.css">
+    <link rel="stylesheet" href="styles/guia.css">
+</head>
+<body>
+    <header class="encabezado-principal">
+        <div class="barra-superior">
+            <div class="logo-titulo">
+                <img src="images/java-logo-white.png" alt="Servidores Java EE" class="logo">
+                <h1 class="titulo-encabezado">Manual de Configuración de Servidores Java EE</h1>
+            </div>
+            <nav class="navegacion-principal">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="tomcat-guia.html">Apache Tomcat</a></li>
+                    <li><a href="#" aria-current="page">WildFly</a></li>
+                    <li><a href="glassfish-guia.html">GlassFish</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article class="contenido-guia">
+            <header class="encabezado-guia">
+                <img src="images/wildfly-white.png" alt="Logo de WildFly" class="logo-guia">
+                <h1>Instalación de WildFly en Ubuntu</h1>
+            </header>
+
+            <section class="seccion-guia">
+                <h2>Requisitos Previos</h2>
+                <div class="paso-guia">
+                    <div class="contenido-paso">
+                        <h3>1. Instalar Java Development Kit (JDK)</h3>
+                        <p>WildFly requiere JDK 8 o superior. Para instalarlo en Ubuntu, ejecuta los siguientes comandos:</p>
+                        <code>sudo apt update</code><br>
+                        <code>sudo apt install openjdk-17-jdk</code>
+                        <br><br>
+                        <p>Verifica la instalación con:</p>
+                        <code>java -version</code>
+                    </div>
+                    <div class="imagen-paso">
+                        <img src="images/glassfish-ss-1.png" alt="Java JDK">
+                    </div>
+                </div>
+            </section>
+
+            <section class="seccion-guia">
+                <h2>Proceso de Instalación</h2>
+
+                <div class="paso-guia">
+                    <div class="contenido-paso">
+                        <h3>2. Descargar WildFly</h3>
+                        <p>Descarga la última versión estable de WildFly desde el sitio oficial:</p>
+                        <code>wget https://download.jboss.org/wildfly/34.0.1.Final/wildfly-34.0.1.Final.tar.gz</code>
+                        <br><br>
+                        <p>Si no tienes instalado <code>wget</code>, usa:</p>
+                        <code>sudo apt install wget</code>
+                    </div>
+                    <div class="imagen-paso">
+                        <img src="images/wildfly-ss-2.png" alt="Descarga de WildFly">
+                    </div>
+                </div>
+
+                <div class="paso-guia">
+                    <div class="contenido-paso">
+                        <h3>3. Extraer los Archivos</h3>
+                        <p>Descomprime el archivo descargado y muévelo al directorio <code>/opt</code>:</p>
+                        <code>sudo apt install unzip</code><br>
+                        <code>sudo tar xzf wildfly-34.0.1.Final.tar.gz -C /opt/</code>
+                        <br><br>
+                        <p>Renombra el directorio si es necesario:</p>
+                        <code>sudo mv /opt/wildfly-34.0.1.Final /opt/wildfly</code>
+                    </div>
+                    <div class="imagen-paso">
+                        <img src="images/wildfly-ss-3.png" alt="Configuración en Ubuntu">
+                    </div>
+                </div>
+
+                <div class="paso-guia">
+                    <div class="contenido-paso">
+                        <h3>4. Configurar Variables de Entorno</h3>
+                        <p>Añade las siguientes líneas al archivo <code>~/.bashrc</code> para configurar las variables de entorno:</p>
+                        <code>export WILDFLY_HOME=/opt/wildfly</code><br>
+                        <code>export PATH=$PATH:$WILDFLY_HOME/bin</code>
+                        <br><br>
+                        <p>Aplica los cambios con:</p>
+                        <code>source ~/.bashrc</code>
+                    </div>
+                    <div class="imagen-paso">
+                        <img src="images/wildfly-ss-4.png" alt="Variables de Entorno">
+                    </div>
+                </div>
+
+                <div class="paso-guia">
+                    <div class="contenido-paso">
+                        <h3>5. Iniciar WildFly</h3>
+                        <p>Inicia WildFly ejecutando el siguiente comando:</p>
+                        <code>$WILDFLY_HOME/bin/standalone.sh</code>
+                        <br><br>
+                        <p>Para detener el servidor, usa:</p>
+                        <code>$WILDFLY_HOME/bin/jboss-cli.sh --connect --command="shutdown"</code>
+                    </div>
+                    <div class="imagen-paso">
+                        <img src="images/wildfly-ss-5.png" alt="Inicio de WildFly">
+                    </div>
+                </div>
+            </section>
+
+            <section class="seccion-guia">
+                <h2>Verificación de la Instalación</h2>
+                <div class="paso-guia">
+                    <div class="contenido-paso">
+                        <h3>6. Comprobar la Instalación</h3>
+                        <p>Accede a la consola de administración de WildFly en tu navegador:</p>
+                        <code>http://localhost:9990</code>
+                        <br><br>
+                        <p>Deberías ver la interfaz de administración de WildFly.</p>
+                    </div>
+                    <div class="imagen-paso">
+                        <img src="images/wildfly-ss-6.png" alt="Verificación de WildFly">
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer class="pie-principal">
+        <div class="contenido-pie">
+            <div class="seccion-pie">
+                <h4>Enlaces Útiles</h4>
+                <ul>
+                    <li><a href="index.html#introduccion">Documentación</a></li>
+                    <li><a href="mailto:contacto@manualjava.com">Soporte</a></li>
+                    <li><a href="mailto:contacto@manualjava.com">Contacto</a></li>
+                  </ul>
+            </div>
+            <div class="derechos">
+                <p>© 2024 Manual de Configuración de Servidores Java EE. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

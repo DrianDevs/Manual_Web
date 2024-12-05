@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Instalación de Apache Tomcat - Versión ZIP</title>
+    <link rel="stylesheet" href="styles/principal.css">
+    <link rel="stylesheet" href="styles/encabezado.css">
+    <link rel="stylesheet" href="styles/pie.css">
+    <link rel="stylesheet" href="styles/guia.css">
+</head>
+<body>
+    <header class="encabezado-principal">
+        <div class="barra-superior">
+            <div class="logo-titulo">
+                <img src="images/java-logo-white.png" alt="Servidores Java EE" class="logo">
+                <h1 class="titulo-encabezado">Manual de Configuración de Servidores Java EE</h1>
+            </div>
+            <nav class="navegacion-principal">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="#" aria-current="page">Apache Tomcat</a></li>
+                    <li><a href="wildfly-guia.html">WildFly</a></li>
+                    <li><a href="glassfish-guia.html">GlassFish</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article class="contenido-guia">
+            <header class="encabezado-guia">
+                <img src="images/tomcat.png" alt="Logo de Apache Tomcat" class="logo-guia">
+                <h1>Instalación de Apache Tomcat en Windows</h1>
+            </header>
+
+            <section class="seccion-guia">
+                <h2>Requisitos Previos</h2>
+                <div class="paso-guia">
+                    <div class="contenido-paso">
+                        <h3>1. Instalar Java Development Kit (JDK)</h3>
+                        <p>Antes de instalar Apache Tomcat, asegúrate de tener instalado el JDK en tu sistema. Puedes verificarlo abriendo una terminal y ejecutando:</p>
+                        <code>java -version</code>
+                        <br><br>
+                        <p>Si no lo tienes instalado, descárgalo desde <a href="https://www.oracle.com/java/technologies/downloads/">la página oficial de Oracle.</a></p>
+                        <p>Selecciona la descarga que concuerde con tu sistema operativo y la arquitectura de tu procesador.</p>
+                    </div>
+                    <div class="imagen-paso">
+                        <img src="images/apache-ss-1.png" alt="Java JDK">
+                    </div>
+                </div>
+            </section>
+
+            <section class="seccion-guia">
+                <h2>Proceso de Instalación</h2>
+
+                <div class="paso-guia">
+                    <div class="contenido-paso">
+                        <h3>2. Descargar Apache Tomcat</h3>
+                        <p>Visita <a href="https://tomcat.apache.org/">la página oficial de Apache Tomcat</a> y descarga la última versión estable:</p>
+                        <ul>
+                            <li>Selecciona la versión 10.x (o la última versión estable).</li>
+                            <li>Descarga el archivo comprimido ZIP bajo la sección "Core".</li>
+                        </ul>
+                    </div>
+                    <div class="imagen-paso">
+                        <img src="images/apache-ss-2.png" alt="Descarga de Tomcat">
+                    </div>
+                </div>
+
+                <div class="paso-guia">
+                    <div class="contenido-paso">
+                        <h3>3. Extraer el Archivo ZIP</h3>
+                        <p>Después de descargar el archivo ZIP:</p>
+                        <ol>
+                            <li>Haz clic derecho sobre el archivo y selecciona "Extraer todo".</li>
+                            <li>Selecciona una ubicación para extraer el contenido (por ejemplo, `C:\Apache\Tomcat`).</li>
+                            <li>Espera a que finalice la extracción.</li>
+                        </ol>
+                    </div>
+                    <div class="imagen-paso">
+                        <img src="images/apache-ss-3.png" alt="Extracción del ZIP">
+                    </div>
+                </div>
+
+                <div class="paso-guia">
+                    <div class="contenido-paso">
+                        <h3>4. Configuración Inicial</h3>
+                        <p>Antes de iniciar Apache Tomcat, asegúrate de realizar estas configuraciones:</p>
+                        <ul>
+                            <li>Configura las variables de entorno necesarias:
+                                <ul>
+                                    <li><strong>JAVA_HOME:</strong> Apunta al directorio de instalación del JDK.</li>
+                                    <li><strong>CATALINA_HOME:</strong> Apunta al directorio donde se extrajo Tomcat.</li>
+                                </ul>
+                            </li>
+                            <li>Guarda los cambios y reinicia el sistema si es necesario.</li>
+                        </ul>
+                    </div>
+                    <div class="imagen-paso">
+                        <img src="images/apache-ss-4.png" alt="Variables de entorno">
+                    </div>
+                </div>
+
+                <div class="paso-guia">
+                    <div class="contenido-paso">
+                        <h3>5. Iniciar Apache Tomcat</h3>
+                        <p>Para iniciar el servidor:</p>
+                        <ol>
+                            <li>Navega al directorio donde se extrajo Tomcat.</li>
+                            <li>Abre la carpeta `bin`.</li>
+                            <li>Haz doble clic en `startup.bat` para iniciar el servidor.</li>
+                        </ol>
+                        <p>Esto abrirá una ventana de terminal indicando que Tomcat se está ejecutando.</p>
+                    </div>
+                    <div class="imagen-paso">
+                        <img src="images/apache-ss-5.png" alt="Startup de Tomcat">
+                    </div>
+                </div>
+
+                <div class="paso-guia">
+                    <div class="contenido-paso">
+                        <h3>6. Verificar la Instalación</h3>
+                        <p>Abre un navegador y accede a <code>http://localhost:8080</code>. Deberías ver la página de inicio de Apache Tomcat.</p>
+                    </div>
+                    <div class="imagen-paso">
+                        <img src="images/apache-ss-6.png" alt="Página de inicio de Tomcat">
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer class="pie-principal">
+        <div class="contenido-pie">
+            <div class="seccion-pie">
+                <h4>Enlaces Útiles</h4>
+                <ul>
+                    <li><a href="index.html#introduccion">Documentación</a></li>
+                    <li><a href="mailto:contacto@manualjava.com">Soporte</a></li>
+                    <li><a href="mailto:contacto@manualjava.com">Contacto</a></li>
+                  </ul>
+            </div>
+            <div class="derechos">
+                <p>© 2024 Manual de Configuración de Servidores Java EE. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
